@@ -116,12 +116,13 @@ public class MyArrayList<T> implements MyList<T> {
      */
     @Override
     public void remove(int index) {
-        if (index >= size() || index < 0 || elements[index] == null) {
-            throw new IndexOutOfBoundsException("No such an element");
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of bounds");
         }
-        for (int i = index; i < size; i++) {
+        for (int i = index; i < size - 1; i++) {
             elements[i] = elements[i + 1];
         }
+        elements[size - 1] = null;
         size--;
     }
 
@@ -130,7 +131,7 @@ public class MyArrayList<T> implements MyList<T> {
      *
      * @param list список, который нужно увеличить.
      */
-    public void growCapacity(T[] list) {
+    private void growCapacity(T[] list) {
         this.elements = Arrays.copyOf(list, (int) Math.round(list.length * 1.5));
     }
 
@@ -139,10 +140,8 @@ public class MyArrayList<T> implements MyList<T> {
      *
      * @return массив элементов списка обрезанный до текущего размера
      */
-    private T[] trimToSize() {
-        if (elements.length > size) {
-            return Arrays.copyOfRange(elements, 0, size);
-        }
+    public T[] trimToSize() {
+        elements = Arrays.copyOfRange(elements, 0, size);
         return elements;
     }
 
@@ -183,5 +182,24 @@ public class MyArrayList<T> implements MyList<T> {
      */
     public void sort(Comparator<? super T> comparator) {
         quickSort.sort(trimToSize(), comparator);
+    }
+
+    /**
+     * Проверяет пустоту списка
+     *
+     * @return возвращает boolean значение
+     */
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    /**
+     * Возвращает вместимость списка, то есть количество элементов,
+     * которое может содержать внутренний массив без изменения его размера.
+     *
+     * @return текущая емкость списка
+     */
+    public int capacity() {
+        return elements.length;
     }
 }
