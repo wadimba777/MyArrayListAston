@@ -33,7 +33,7 @@ list.remove(0);
 list.sort();
 
 // Сортировка элементов с использованием указанного компаратора
-sort(Comparator<T> comparator)
+list.sort(Comparator<T> comparator)
 
 // Очистка списка
 list.clear();
