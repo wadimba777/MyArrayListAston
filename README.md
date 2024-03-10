@@ -29,8 +29,10 @@ list.sort();
 // Очистка списка
 list.clear();
 ```
+
 Методы
 size()
+
 
 ```java
 /**
@@ -40,9 +42,11 @@ size()
  */
 int size();
 ```
+
 Метод size() возвращает текущий размер списка.
 
 add(T element)
+
 
 ```java
 /**
@@ -57,6 +61,7 @@ void add(T element);
 
 add(int index, T element)
 
+
 ```java
 /**
  * Добавляет элемент в указанную позицию списка.
@@ -70,6 +75,7 @@ void add(int index, T element);
 Метод add(int index, T element) добавляет указанный элемент в указанную позицию списка.
 
 get(int index)
+
 
 ```java
 /**
@@ -98,6 +104,7 @@ void remove(int index);
 Метод remove(int index) удаляет элемент из списка по указанному индексу.
 
 clear()
+
 
 ```java
 /**
