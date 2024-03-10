@@ -19,9 +19,12 @@ list.add("apple");
 list.add("banana");
 list.add("orange");
 
+// Добавление элементов по индексу
+list.add(1, "kiwi");
+
 // Получение элемента по индексу
 String secondElement = list.get(1);
-System.out.println("Second element: " + secondElement); // Output: Second element: banana
+System.out.println("Second element: " + secondElement);
 
 // Удаление элемента
 list.remove(0);
