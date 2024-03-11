@@ -31,6 +31,9 @@ public class MyArrayListTest {
 
     @Test
     public void testAddAtIndex() {
+        list.add(1);
+        list.add(2);
+        list.add(3);
         list.add(0, 20);
         assertEquals(20, list.get(0));
     }
