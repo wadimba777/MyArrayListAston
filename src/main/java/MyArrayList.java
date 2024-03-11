@@ -135,17 +135,14 @@ public class MyArrayList<T> implements MyList<T> {
      * @param list список, который нужно увеличить.
      */
     private void growCapacity(T[] list) {
-        this.elements = Arrays.copyOf(list, (int) Math.round(list.length * 1.5));
+        elements = Arrays.copyOf(list, (int) Math.round(list.length * 1.5));
     }
 
     /**
      * Обрезает внутренний массив списка до размера, соответствующего текущему количеству элементов в списке
-     *
-     * @return массив элементов списка обрезанный до текущего размера
      */
-    private T[] trimToSize() {
+    public void trimToSize() {
         elements = Arrays.copyOfRange(elements, 0, size);
-        return elements;
     }
 
     /**
@@ -184,7 +181,7 @@ public class MyArrayList<T> implements MyList<T> {
      * @param comparator компаратор, используемый для сравнения элементов списка
      */
     public void sort(Comparator<? super T> comparator) {
-        quickSort.sort(trimToSize(), comparator);
+        quickSort.sort(elements, 0, size() - 1, comparator);
     }
 
     /**

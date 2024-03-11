@@ -105,6 +105,16 @@ public class MyArrayListTest {
     }
 
     @Test
+    public void testTrimToSize() {
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        assertTrue(list.capacity() > 3);
+        list.trimToSize();
+        assertEquals(list.capacity(), list.size());
+    }
+
+    @Test
     public void testIsEmptyWhenEmpty() {
         assertTrue(list.isEmpty());
     }
@@ -122,6 +132,7 @@ public class MyArrayListTest {
         list.clear();
         assertTrue(list.isEmpty());
     }
+
     @Test
     public void testGrowCapacity() {
         for (int i = 0; i < 11; i++) {

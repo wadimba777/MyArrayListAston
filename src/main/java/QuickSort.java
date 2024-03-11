@@ -25,7 +25,7 @@ public class QuickSort {
      * @param comparator компаратор, используемый для сравнения элементов массива
      * @param <T>        тип элементов массива
      */
-    private <T> void sort(T[] array, int lowIndex, int highIndex, Comparator<? super T> comparator) {
+    public <T> void sort(T[] array, int lowIndex, int highIndex, Comparator<? super T> comparator) {
         if (array == null) {
             return;
         }
