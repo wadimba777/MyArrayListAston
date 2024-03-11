@@ -30,10 +30,10 @@ public class QuickSortTest {
 
     @Test
     public void testSortWithCustomComparator() {
-        String[] array = {"banana", "apple", "orange", "kiwi", "grape"};
-        String[] expected = {"kiwi", "grape", "apple", "orange", "banana"};
+        String[] array = {"bananas", "strawberry", "apple", "orange", "kiwi"};
+        String[] expected = {"kiwi", "apple", "orange", "bananas", "strawberry"};
 
-        Comparator<String> lengthComparator = Comparator.comparingInt(String::length);
+        Comparator<String> lengthComparator = Comparator.comparingInt(String::length); // Сравнение по количеству символов
 
         QuickSort quickSort = new QuickSort();
         quickSort.sort(array, lengthComparator);

@@ -11,7 +11,7 @@ public class MyArrayList<T> implements MyList<T> {
     private T[] elements;
     private int size;
     private final int DEFAULT_CAPACITY = 10;
-    public final int NON_EXIST_ELEMENT = -1;
+    private final int NON_EXIST_ELEMENT = -1;
     QuickSort quickSort = new QuickSort();
 
     /**
@@ -69,6 +69,9 @@ public class MyArrayList<T> implements MyList<T> {
     public void add(int index, T element) {
         if (index > size()) {
             throw new IndexOutOfBoundsException("Index out of bounds");
+        }
+        if (size == elements.length) {
+            growCapacity(elements);
         }
         for (int i = size; i > index; i--) {
             elements[i] = elements[i - 1];
@@ -140,7 +143,7 @@ public class MyArrayList<T> implements MyList<T> {
      *
      * @return массив элементов списка обрезанный до текущего размера
      */
-    public T[] trimToSize() {
+    private T[] trimToSize() {
         elements = Arrays.copyOfRange(elements, 0, size);
         return elements;
     }
