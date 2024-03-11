@@ -97,7 +97,7 @@ public class MyArrayList<T> implements MyList<T> {
      * Возвращает индекс первого вхождения указанного элемента в список.
      *
      * @param element элемент, индекс которого нужно найти.
-     * @return индекс первого вхождения указанного элемента в список или {@link #NON_EXIST_ELEMENT} если элемент не найден.
+     * @return индекс первого вхождения указанного элемента в список или константу NON_EXIST_ELEMENT если элемент не найден
      */
     public int indexOf(T element) {
         for (int index = 0; index < elements.length; index++) {
