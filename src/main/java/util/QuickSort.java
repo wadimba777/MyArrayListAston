@@ -1,7 +1,9 @@
+package util;
+
 import java.util.Comparator;
 
 /**
- * Класс для реализации сортировки массива методом быстрой сортировки (QuickSort)
+ * Класс для реализации сортировки массива методом быстрой сортировки (util.QuickSort)
  */
 public class QuickSort {
 

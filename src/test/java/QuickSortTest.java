@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import org.junit.*;
+import util.QuickSort;
 
 import java.util.Comparator;
 
