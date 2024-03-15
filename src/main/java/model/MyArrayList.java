@@ -39,21 +39,11 @@ public class MyArrayList<T> implements MyList<T> {
         elements = (T[]) new Object[DEFAULT_CAPACITY];
     }
 
-    /**
-     * Возвращает текущий размер списка.
-     *
-     * @return текущий размер списка.
-     */
     @Override
     public int size() {
         return size;
     }
 
-    /**
-     * Добавляет элемент в конец списка.
-     *
-     * @param element добавляемый элемент.
-     */
     @Override
     public void add(T element) {
         if (size == elements.length) {
@@ -62,13 +52,6 @@ public class MyArrayList<T> implements MyList<T> {
         elements[size++] = element;
     }
 
-    /**
-     * Добавляет элемент в указанную позицию списка.
-     *
-     * @param index   позиция, в которую нужно добавить элемент.
-     * @param element добавляемый элемент.
-     * @throws IndexOutOfBoundsException если указанная позиция выходит за пределы списка.
-     */
     @Override
     public void add(int index, T element) {
         if (index > size()) {
@@ -84,13 +67,6 @@ public class MyArrayList<T> implements MyList<T> {
         size++;
     }
 
-    /**
-     * Возвращает элемент по указанной позиции в списке.
-     *
-     * @param index позиция элемента в списке.
-     * @return элемент по указанной позиции.
-     * @throws IndexOutOfBoundsException если указанная позиция выходит за пределы списка.
-     */
     @Override
     public T get(int index) {
         if (elements[index] == null || index >= size) {
@@ -100,12 +76,6 @@ public class MyArrayList<T> implements MyList<T> {
         }
     }
 
-    /**
-     * Возвращает индекс первого вхождения указанного элемента в список.
-     *
-     * @param element элемент, индекс которого нужно найти.
-     * @return индекс первого вхождения указанного элемента в список или константу NON_EXIST_ELEMENT если элемент не найден
-     */
     public int indexOf(T element) {
         for (int index = 0; index < elements.length; index++) {
             if (element == elements[index]) {
@@ -115,12 +85,6 @@ public class MyArrayList<T> implements MyList<T> {
         return NON_EXIST_ELEMENT;
     }
 
-    /**
-     * Удаляет элемент из списка по указанному индексу.
-     *
-     * @param index индекс удаляемого элемента.
-     * @throws IndexOutOfBoundsException если указанный индекс выходит за пределы списка или ссылается на пустую ячейку.
-     */
     @Override
     public void remove(int index) {
         if (index < 0 || index >= size) {
@@ -149,9 +113,6 @@ public class MyArrayList<T> implements MyList<T> {
         elements = Arrays.copyOfRange(elements, 0, size);
     }
 
-    /**
-     * Очищает список, удаляя все элементы и устанавливая размер списка в 0
-     */
     @Override
     public void clear() {
         for (int i = 0; i < size; i++) {
